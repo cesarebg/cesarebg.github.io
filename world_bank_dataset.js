@@ -18,7 +18,7 @@ function initMap() {
         var year = getyear.value;
         var getindicator = document.getElementById('indicator');
         var indicator = getindicator.value;
-        var url = 'http://api.worldbank.org/countries/' + countrycode + '/indicators/' + indicator + '?date=' + year + '&per_page=264&format=jsonp&prefix=Getdata';
+        var url = 'https://api.worldbank.org/countries/' + countrycode + '/indicators/' + indicator + '?date=' + year + '&per_page=264&format=jsonp&prefix=Getdata';
         var query_url = url;
 
         var script = document.createElement('script');
@@ -59,7 +59,7 @@ function processCountry(GDP_country_growth) {
     var infowindow = new google.maps.InfoWindow({
         content: contentString,
     });
-    var url_countries = 'http://api.worldbank.org/countries/' + GDP_country_growth.countryid + '?' + 'format=jsonp&prefix=Getdata1';
+    var url_countries = 'https://api.worldbank.org/countries/' + GDP_country_growth.countryid + '?' + 'format=jsonp&prefix=Getdata1';
     var query_url_countries = url_countries;
     var script = document.createElement('script');
     script.src = query_url_countries;
