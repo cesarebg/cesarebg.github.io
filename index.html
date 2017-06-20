@@ -1,113 +1,40 @@
-<!--Index:
-
-  1. Head
-  2. Header
-  3. Teaser: App to locate indicators of the World Bank with Google Maps
-  4. Teaser: Macroeconomics 101
-  5. Teaser: Register
-  6. Container with links to other sources of economic information
-  7. Footer
-
--->
-
-<!--1. Head -->
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
-    <title>Mapping Economics</title>
-    <link rel="stylesheet" href="contents/stylesheets/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <title>UK Budget Chart</title>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <link rel="stylesheet" type="text/css" href="contents/stylesheet/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+
 </head>
 
 <body>
-    <!--
+    <header>Budget expenditure visualisation tool</header>
+    <div class="explainer">The objective is to compare government spending in two dimensions,<br>to verify if proposed cuts or increases in expenditure in nominal values<br> are significant about the size of the UK economy.</div>
+    <div class="explainer">Please select a government function and compare values in £ and % of GDP.</div>
+    <div class="explainer">A tooltip in each point shows values, growth and correlation coefficient.</div>
+    <select id="gov_function">
+      <option value="1. General public services">1. General public services</option>
+      <option value="2. Defence">2. Defence</option>
+      <option value="3. Public order and safety">3. Public order and safety</option>
+      <option value="4. Economic affairs">4. Economic affairs</option>
+      <option value="5. Environment protection">5. Environment protection</option>
+      <option value="6. Housing and community amenities">6. Housing and community amenities</option>
+      <option value="7. Health">7. Health</option>
+      <option value="8. Recreation, culture and religion">8. Recreation, culture and religion</option>
+      <option value="9. Education">9. Education</option>
+      <option value="10. Social protection">10. Social protection</option>
+      <option value="EU transactions">EU transactions</option>
+      <option value="Public sector expenditure on services">Public sector expenditure on services</option>
+      <option value="Total Managed Expenditure">Total Managed Expenditure</option>
+    </select>
+    <div class="explainer">Almost all government functions showed a steep increase and then decrease<br>in spending after the financial crisis of 2008.</div>
+    <div id="vis_pound"></div><div id="vis_gdp"></div>
+    <div class="explainer">(Source: HM Treasury. Graphs produced with D3.)</div>
+    <script src="contents/javascript/d3_exp_pound.js"></script>
+    <script src="contents/javascript/d3_exp_gdp.js"></script>
+</body>
 
-  2. Header
-
--->
-    <header class="primary-header container group">
-
-        <ul class="topnav" id="myTopnav">
-            <li><a href="index.html">Main menu</a></li>
-            <li><a href="dataset.html">Mapping economics</a></li>
-            <li><a href="macroeconomics.html">Why GDP and debt?</a></li>
-            <li><a href="register.html">Register</a></li>
-            <li class="icon">
-                <a href="javascript:void(0);" onclick="openmenu()">&#9776;</a>
-            </li>
-        </ul>
-    </header>
-    <section class="grid">
-
-        <!--
-
-      3. Teaser: App to locate indicators of the World Bank with Google Maps
-
-    -->
-
-        <section class="teaser column-1-4">
-            <a href="dataset.html">
-                <h5>Mapping Economics</h5>
-                <img src="contents/images/15458183459_e0fa2cca0d_m.jpg" alt="Mapping Economics">
-                <p><strong>Map Economic Data:</strong> Use our tool to map indicators such as GDP and External Debt</p>
-            </a>
-        </section>
-        <!--
-
-          4. Teaser: Macroeconomics 101
-
-        -->
-        <section class="teaser column-1-4">
-            <a href="macroeconomics.html">
-                <h5>Why measure indicators?</h5>
-                <img src="contents/images/3403773374_01dce76548_m.jpg" alt="Macroeconomics 101">
-                <p><strong>Macroeconomics 101:</strong> Why is important to measure production and debt of a nation?</p>
-            </a>
-        </section>
-        <!--
-
-          5. Teaser: Register
-
-        -->
-        <section class="teaser column-1-4">
-            <a href="register.html">
-                <h5>Receive updates</h5>
-                <img src="contents/images/8237726412_707b997013_z.jpg" alt="Register for business news">
-                <p><strong>Suscribe:</strong> Get our mailing list to recieve the latest business news from around the world</p>
-            </a>
-        </section>
-    </section>
-
-    <!--
-
-    6. Container with links to other sources of economic information
-
-  -->
-<section class="hero container">
-    <h3 class="tagline">You can find more indicators in the following sites:<h3>
-  <a href="http://data.worldbank.org"><h2>World Bank</h2></a>
-  <a href="http://www.imf.org/external/index.htm"><h2>IMF</h2></a>
-  <a href="http://www.bankofengland.co.uk/Pages/home.aspx"><h2>Bank of England</h2></a>
-  <a href="https://www.ons.gov.uk/"><h2>ONS</h2></a>
-  </section>
-
-    <!--
-
-    7. Footer
-
-  -->
-    <footer class="primary-footer container group">
-      <nav class=footer-nav>
-        <ul><a href="index.html">Main menu</a></ul>
-        <ul><a href="dataset.html">Mapping Economics</a></ul>
-        <ul><a href="macroeconomics.html">Why measuring GDP?</a></ul>
-        <ul><a href="register.html">Register</a></ul>
-        <br></br>
-        <ul>#CardiffUniTrained</ul>
-      </nav>
-    </footer>
-    <script src=world_bank_dataset.js></script>
-  </body>
 </html>
